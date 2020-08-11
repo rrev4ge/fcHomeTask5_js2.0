@@ -234,6 +234,33 @@ function checkMultiplicity (num1, num2) {
 alert(`Кратность чисел: ${checkMultiplicity(prompt("Кратность чисел, введите делимое:"), prompt("Кратность чисел, введите делитель:"))}`);
 
 
+/**
+ * 4.2) Function task: check Triangle.
+ *
+ * @param {array} arr add all lenght of parties as array.
+ * @return {boolean} triangle is true or false.
+ */
+
+
+function checkTriangle (arr) {
+
+    return arr[0] > 0 && arr[0] < arr[1] + arr[2] && arr[1] > 0 && arr[1] < arr[0] + arr[2] && arr[2] > 0 && arr[2] < arr[0] + arr[1];
+
+};
+
+let triangleArr = [];
+for (let i = 0; i < 3; i++) {
+        triangleArr[i] = prompt(`Введите длину ${i+1} стороны:`);
+        triangleArr[i] = Number(triangleArr[i]);
+    };
+
+alert(`Возможность построения треугольника: ${checkTriangle(triangleArr)}`);
+
+
+
+
+
+
 
 
 /**
