@@ -235,7 +235,7 @@ alert(`Кратность чисел: ${checkMultiplicity(prompt("Кратнос
 
 
 /**
- * 4.2) Function task: check Triangle.
+ * 4.3) Function task: check Triangle.
  *
  * @param {array} arr add all lenght of parties as array.
  * @return {boolean} triangle is true or false.
@@ -248,23 +248,120 @@ function checkTriangle (arr) {
 
 };
 
-let triangleArr = [];
-for (let i = 0; i < 3; i++) {
-        triangleArr[i] = prompt(`Введите длину ${i+1} стороны:`);
-        triangleArr[i] = Number(triangleArr[i]);
-    };
+function setTriangle() {
+    let triangleArr = [];
+    for (let i = 0; i < 3; i++) {
+            triangleArr[i] = prompt(`Введите длину ${i+1} стороны:`);
+            triangleArr[i] = Number(triangleArr[i]);
+        };
+    return triangleArr;
+};
 
-alert(`Возможность построения треугольника: ${checkTriangle(triangleArr)}`);
+
+alert(`Возможность построения треугольника: ${checkTriangle(setTriangle())}`);
 
 
 
+/**
+ * 4.4) Function task: Triangle and rectangle square.
+ *
+ * @param {array} arr add all lenght of parties as array.
+ * @return {boolean} triangle is true or false.
+ */
 
+
+function nthrt (num, n) {
+
+    return num ** (1/n);
+    
+}
+
+
+
+function getTriangleSquare (arr) {
+
+        let p = (arr[0] + arr[1] + arr[2]) / 2;
+        return nthrt (p * (p - arr[0]) * (p - arr[1]) * (p - arr[2]), 2);
+
+};
+
+alert(`площадь треугольника: ${getTriangleSquare(setTriangle())}`);
+
+
+function getRectangleSquare (arr) {
+
+    return arr[0] * arr[1];
+
+};
+
+
+function setRectangle () {
+    
+    let rectangleArr = [];
+    for (let i = 0; i < 2; i++) {
+            if (i===0){
+                rectangleArr[i] = prompt(`Введите ширину прямоугольника:`);
+            } else {
+                rectangleArr[i] = prompt(`Введите высоту прямоугольника:`); 
+            }
+                rectangleArr[i] = Number(rectangleArr[i]);
+        };
+    return rectangleArr;
+
+}; 
+
+alert(`площадь прямоугольника: ${getRectangleSquare(setRectangle())}`);
 
 
 
 
 /**
- * 6) Array constructor.
+ * 5.1) Object task. Student
+ */
+  
+let Student = {
+    firstName: "John",
+    lastName: "Doe",
+    gender: "Не определился",
+    contacts: "Far far avay",
+};
+
+/**
+ * 5.2) Object task. School
+ */
+
+let school = {
+    faculty: "Law enforcement",
+    cathedra: "New world order",
+};
+
+/**
+ * 6.1) Create array .
+ *
+ * @param {number} prompt number.
+ * @return {boolean} boolean if Prime Number.
+ */
+
+
+let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,];
+
+console.log(numArr.length);
+
+for (let i = 0; i < numArr.length; i++) {
+    if (i % 2 === 0) {
+        console.log(numArr[i]);
+    }
+}
+
+for (let i = 0; i < numArr.length; i++) {
+        console.log(numArr[i % 2 === 0]);
+}
+
+
+
+
+/**
+ * 8) Array constructor.
  *
  * @param {number} prompt number.
  * @return {boolean} boolean if Prime Number.
