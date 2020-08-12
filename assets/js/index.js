@@ -334,7 +334,21 @@ let school = {
  */
 
 
-let numArr = [1, 2, 0, 4, 0, 6, 7, 8, 9, 0,];
+
+function getRandomArr() {
+
+    let array = new Array(Math.floor(Math.random() * 100));
+
+    for (let i = 0; i < array.length; i++) {
+        array[i] = Math.floor(Math.random() * 100);
+    }
+
+    return array;
+
+}
+
+
+let numArr = getRandomArr();
 
 console.log(`Размер массива: ${numArr.length}`);
 
