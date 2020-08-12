@@ -270,18 +270,11 @@ alert(`Возможность построения треугольника: ${c
  */
 
 
-function nthrt (num, n) {
-
-    return num ** (1/n);
-    
-}
-
-
 
 function getTriangleSquare (arr) {
 
         let p = (arr[0] + arr[1] + arr[2]) / 2;
-        return nthrt (p * (p - arr[0]) * (p - arr[1]) * (p - arr[2]), 2);
+        return Math.sqrt(p * (p - arr[0]) * (p - arr[1]) * (p - arr[2]), 2);
 
 };
 
@@ -337,34 +330,68 @@ let school = {
 
 /**
  * 6.1) Create array .
- *
- * @param {number} prompt number.
- * @return {boolean} boolean if Prime Number.
+ * 
  */
 
 
-let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,];
+let numArr = [1, 2, 0, 4, 0, 6, 7, 8, 9, 0,];
 
-console.log(numArr.length);
+console.log(`Размер массива: ${numArr.length}`);
 
 for (let i = 0; i < numArr.length; i++) {
     if (i % 2 === 0) {
-        console.log(numArr[i]);
-    }
-}
+        console.log(`Элементы с четными индексами: ${numArr[i]}`);
+    };
+};
 
 for (let i = 0; i < numArr.length; i++) {
-        console.log(numArr[i % 2 === 0]);
+    if (numArr[i] % 2 === 0) {
+        console.log(`Только четные элементы: ${numArr[i]}`);
+    };
+};
+
+let zeroElements = 0;
+for (let i = 0; i < numArr.length; i++) {
+    if (numArr[i] === 0) {
+        console.log(`Zero elements indexes: ${i}`);
+        zeroElements++;
+    };
+
+};
+console.log(`Количество нулевых элементов: ${zeroElements}`);
+
+
+/**
+ * 7) Create function-constructor.
+ *
+ * @param {string} books info.
+ * @return {object} books.
+ * 
+*/
+  
+function Book (author, title, year, publisher,) {
+
+    this.author = author;
+    this.title = title;
+    this.year = year;
+    this.publisher = publisher;
+
+}
+function Ebook(eFormat, eNumber) {
+
+    this.eFormat = eFormat;
+    this.eNumber = eNumber;
+
 }
 
-
+const book1 = new Book("Doe, John", "Gimli", "1989", "SovokIzdat",);
+Ebook.prototype = book1;
+const eBook1 = new Ebook("ePub", "0923.4",);
 
 
 /**
  * 8) Array constructor.
  *
- * @param {number} prompt number.
- * @return {boolean} boolean if Prime Number.
  */
 
 
